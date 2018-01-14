@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-   @acomments = Acomment.where(article_id: @article).order("created_at DESC")
+   @acomments = Acomment.where(article_id: @article).order("created_at")
   end
   def edit
 

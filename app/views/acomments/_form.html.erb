@@ -1,4 +1,9 @@
+
+
+
 <%= form_for([@article, @article.acomments.build]) do |f| %>
- <%= f.text_area :content %>
-    <%= f.submit "Post" %>
+
+
+    <%= f.text_area :content, class: "form-control", placeholder: "Write comment...", autofocus: true %>
+    <div class="postcomment"><%= f.submit "Post" %></div>
 <% end %>
