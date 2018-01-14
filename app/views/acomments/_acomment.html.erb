@@ -4,9 +4,14 @@
 
 <div class="commets-label">
   <h3 align="left">Comments: </h3>
-
+  <%  x = 0 %>
+<% @acomments.each do |acomment| %>
+      <% x=1 %>
+      <% end %>
+  <% if x== 1 %>
   <div class="well ">
     <ul class="listing">
+
       <% @acomments.each do |acomment| %>
           <li class="eachcomment"><strong><%= link_to acomment.user.username, user_path(acomment.user) %></strong>
             <span>: <%= acomment.content %></span></li>
@@ -18,7 +23,9 @@
 
 
   </div>
+  <% end %>
 </div>
+
 
 <% if logged_in? %>
 <%= render 'acomments/form' %>
